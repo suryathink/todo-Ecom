@@ -4,12 +4,12 @@ const Home = () => {
   return (
     <div style={{width:"80%",margin:"auto",marginTop:"30px"}}>
       <h2>
-        Welcome to shopping cart. Discover a world of convenience and endless
+        Welcome to XYZ Store. Discover a world of convenience and endless
         possibilities.
       </h2>
  <br/>
       <p>
-        "At shopping cart., we are dedicated to bringing you an exceptional
+        "At XYZ Store., we are dedicated to bringing you an exceptional
         online shopping experience. Whether you're looking for the latest
         fashion trends, high-quality electronics, or unique home decor, we have
         it all. Our user-friendly platform is designed to make your shopping

@@ -13,7 +13,7 @@ function NavbarComponent() {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand ><Link className='linkStyle' to ="/" >Shopping Cart</Link></Navbar.Brand>
+          <Navbar.Brand ><Link className='linkStyle' to ="/" >XYZ Store</Link></Navbar.Brand>
           <Nav className="me-auto">
          {/* <Link ><Nav.Link >Home</Nav.Link></Link>     */}
          {/* <Link ><Nav.Link >Home</Nav.Link></Link>     */}
