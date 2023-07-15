@@ -25,10 +25,16 @@ const ApiIntegrationPage = () => {
     }
   };
   
-  let cart = JSON.parse(localStorage.getItem("cartIdArray")) ||  []
   const addToCart = (id)=>{
-   cart.push(id);
-   alert("Item Added to Cart")
+      let cart = JSON.parse(localStorage.getItem("cartIdArray")) ||  []
+      if (cart.includes(id)){
+        alert("Item already in Cart")
+    } else{
+        cart.push(id);
+        localStorage.setItem("cartIdArray", JSON.stringify(cart))
+        alert("Item Added to Cart")
+    }
+  
   }
 
   useEffect(() => {
