@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Home from './Home';
 import "../index.css"
 import Cart from './Ecom/Cart';
+import AboutPage from './Ecom/About';
 
 function NavbarComponent() {
     // const navigate = useNavigate()
@@ -20,6 +21,7 @@ function NavbarComponent() {
         <Nav.Link > <Link className='linkStyle' to ="/todo" >TodoList </Link> </Nav.Link> 
         <Nav.Link > <Link className='linkStyle' to ="/products" >Products Page </Link> </Nav.Link> 
         <Nav.Link > <Link className='linkStyle' to ="/cart" >Cart Page </Link> </Nav.Link> 
+        <Nav.Link > <Link className='linkStyle' to ="/about" >About Page </Link> </Nav.Link> 
           </Nav>
         </Container>
       </Navbar>
