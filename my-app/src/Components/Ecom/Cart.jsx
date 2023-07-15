@@ -42,7 +42,7 @@ const Cart = () => {
   const removeItem = (id) =>{
     cartDataIDArray = JSON.parse(localStorage.getItem("cartIdArray"));
     cartDataIDArray.splice(id,1);
-    console.log("after removing",cartDataIDArray)
+    // console.log("after removing",cartDataIDArray)
     localStorage.setItem("cartIdArray", JSON.stringify(cartDataIDArray))
     getData()
   }
