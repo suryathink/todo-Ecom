@@ -14,7 +14,7 @@ const Cart = () => {
   let cartDataIDArray = JSON.parse(localStorage.getItem("cartIdArray"));
 
   const cartProducts = allProducts.filter((product)=>{
-    return cartDataIDArray.includes(product.id)
+    return cartDataIDArray?.includes(product.id)
   })
 
   console.log("cartProducts",cartProducts)
