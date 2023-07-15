@@ -4,6 +4,7 @@ import NavbarComponent from './Components/Navbar';
 import { Routes, Route } from "react-router-dom"
 import Home from './Components/Home';
 import ApiIntegrationPage from './Components/Ecom/ApiIntegrationPage';
+import Cart from './Components/Ecom/Cart';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         {/* <Route path="contact" element={ <Contact/> } />  */}
         <Route path="/todo" element={ <TodoList/> } />
         <Route path="/products" element={ <ApiIntegrationPage/> } />
+        <Route path="/Cart" element={ <Cart/> } />
       </Routes>
     </div>
   );

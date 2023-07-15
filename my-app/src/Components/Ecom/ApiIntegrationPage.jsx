@@ -1,20 +1,35 @@
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import {useDispatch,useSelector } from "react-redux";
 
 const ApiIntegrationPage = () => {
-  const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
+    const result = useSelector(state => state.users);
+    console.log("result", result)
+
 
   const getData = async () => {
     try {
       let data = await fetch(`https://fakestoreapi.com/products`);
       data = await data.json();
-      console.log(data);
-      setProducts(data);
+    //   console.log(data);
+    //   setProducts(data);
+      dispatch({
+        type: "ADD",
+        payload:data
+      })
+
     } catch (error) {
       console.log(error);
     }
   };
+  
+  let cart = JSON.parse(localStorage.getItem("cartIdArray")) ||  []
+  const addToCart = (id)=>{
+   cart.push(id);
+   alert("Item Added to Cart")
+  }
 
   useEffect(() => {
     getData();
@@ -22,7 +37,7 @@ const ApiIntegrationPage = () => {
 
   return (
     <div style={{width:"90%",margin:"auto",marginTop:"20px",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"25px"}}>
-      {products.map((product) => {
+      {result.map((product,id) => {
        return <Card style={{ width: "18rem" }}>
           <Card.Img variant="top" style={{height:"200px"}} src={product.image} />
           <Card.Body>
@@ -30,7 +45,7 @@ const ApiIntegrationPage = () => {
             {/* <Card.Text>{product.description}</Card.Text> */}
             <Card.Text>Price INR {product.price}</Card.Text>
             <Card.Text>Rating {product.rating.rate}</Card.Text>
-            <Button variant="primary">Add to Cart</Button>
+            <Button variant="primary" onClick={()=>addToCart(id)}>Add to Cart</Button>
           </Card.Body>
         </Card>;
       })}
